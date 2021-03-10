@@ -1,6 +1,7 @@
 const express = require('express');
 const conectarDB = require('./config/db');
 const cors = require('cors');
+require('dotenv').config();
 
 // crear el servidor
 const app = express();
@@ -15,7 +16,7 @@ app.use(cors());
 app.use(express.json({ extended: true }));
 
 // puerto del servidor
-const port = process.env.port || 5000; 
+const port = process.env.PORT || 4000; 
 
 // Importar rutas
 app.use('/api/usuarios', require('./routes/usuarios'));
